@@ -30,5 +30,9 @@ public class MulticastChatClient {
 
         //Send message to Multicast address
         DatagramPacket data = new DatagramPacket(msg.getBytes(), 0,msg.length(), group, portnumber);
+        chatMulticastSocket.send(data);
+
+        //Close the socket
+        chatMulticastSocket.close();
     }
 }
